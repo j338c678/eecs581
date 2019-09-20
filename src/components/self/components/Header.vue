@@ -21,25 +21,25 @@ export default {
   data () {
     return {
       backgroundImg: './static/photo1.jpg',
-      titleOpacity: 0, // "我的瞬间"透明度
-      titleY: 320, // “我的瞬间”向上位移的距离
-      imgY: 0 // 图片向上位移的距离
+      titleOpacity: 0, // "self transparency "
+      titleY: 320, // y distance of "self"
+      imgY: 0 // y distance of imgage
     }
   },
   computed: {
-    /* 改变图片位移 */
+    /* change imgage distance */
     imgStyleObject: function () {
       return {
         transform: `translateY(${this.imgY}px)`
       }
     },
-    /* 改变“详细信息” */
+    /* change“details info” */
     detailStyleObject: function () {
       return {
         opacity: 1 - this.titleOpacity
       }
     },
-    /* 改变“我的瞬间” */
+    /* change“self” */
     titleStyleObject: function () {
       return {
         color: '#fff',

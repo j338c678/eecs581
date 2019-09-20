@@ -1,15 +1,7 @@
-<!--
-itemData:
-nickName: 昵称
-timeStamp: 时间戳
-imgs: 数组，图片链接
-word: 文字
-topic: 话题
-location: 定位
- -->
+
 <template>
   <div class="soul-cell-item">
-    <!-- 头部：头像+昵称+时间戳 -->
+    <!-- header：photo+nickname+time -->
     <div class="soul-cell-item-header">
       <div class="soul-cell-item-header-icon" @click="$router.push('/soulMoment')">
         <img src="@/assets/images/headicon/0.png">
@@ -20,17 +12,16 @@ location: 定位
       </div>
     </div>
 
-    <!-- 内容：图片+文字+话题+定位 -->
+    <!-- content：picture+text+topic+location -->
     <div class="soul-cell-item-content">
       <div class="soul-cell-item-content-image">
-        <template v-if="itemData.imgs.count != 0"> <!-- 判断是否有图片 -->
+        <template v-if="itemData.imgs.count != 0"> <!-- if it has picture -->
             <template v-for="(url, index) in itemData.imgs.url">
               <img
                 :src="url"
                 :preview="itemData.key"
                 :key="index"
                 :class="{
-                  // 图片为4张就变成4宫格
                   'soul-cell-item-content-image-count-default': (itemData.imgs.count < 4),
                   'soul-cell-item-content-image-count-full': (itemData.imgs.count == 4)
                 }"
@@ -49,7 +40,7 @@ location: 定位
       </div>
     </div>
 
-    <!-- 尾部：收藏+点赞+评论+转发 -->
+    <!-- buttom：save+like+comment+share -->
     <div class="soul-cell-item-footer">
       <div
         @click="handleClickCollectToggle"
@@ -69,7 +60,7 @@ location: 定位
           style="width: 0.51rem; height: 0.51rem;"
           :src="iconHeartUrl"
         >
-        <!-- 红心数量为0则设置为'' -->
+        <!-- like'' -->
         <span>
           {{iconHeartCount === 0 ? '' : iconHeartCount}}
         </span>
@@ -96,16 +87,15 @@ location: 定位
       </div>
     </div>
 
-    <!-- 分割线：灰色 -->
+    <!-- line:grey -->
     <div class="soul-cell-item-divide"></div>
-    <!-- 评论弹窗（暂定） -->
     <div v-transfer-dom>
             <popup v-model="show1" height="65%">
-              <Divider>评论</Divider>
+              <Divider>comment</Divider>
                 <p>
                   <div style="width:100%;position:fixed;left:0;bottom:0;z-index:0;">
                     <group>
-                      <x-input name="comment" placeholder="请输入评论"></x-input>
+                      <x-input name="comment" placeholder="please leave your comment"></x-input>
                     </group>
                   </div>
                 </p>
@@ -162,7 +152,7 @@ export default {
     }
   },
   methods: {
-    // 点收藏与取消收藏
+    // save or not
     handleClickCollectToggle () {
       if (this.iconCollectUrl === require('../../assets/images/icon/icon_collect_gray.png')) {
         this.iconCollectUrl = require('../../assets/images/icon/icon_collect_green.png')
@@ -170,7 +160,7 @@ export default {
         this.iconCollectUrl = require('../../assets/images/icon/icon_collect_gray.png')
       }
     },
-    // 点红心与取消红心
+    // like or not
     handleClickHeartToggle () {
       if (this.iconHeartUrl === require('../../assets/images/icon/icon_heart_gray.png')) {
         this.iconHeartUrl = require('../../assets/images/icon/icon_heart_red.png')
@@ -190,7 +180,7 @@ export default {
   background-color: #fff;
 }
 
-/* 头部 */
+/* header */
 .soul-cell-item-header {
   display: flex;
   padding: 0.15rem 0.25rem;
@@ -220,7 +210,7 @@ export default {
   color: var(--font-color-disabled, #A6A6A6);
 }
 
-/* 内容 */
+/* content */
 .soul-cell-item-content {
   display: flex;
   flex-direction: column;
@@ -256,7 +246,7 @@ export default {
   color: var(--font-color-square-nickname, #26D4D0);
 }
 
-/* 尾部 */
+/* buttom */
 .soul-cell-item-footer {
   display: flex;
   align-items: center;

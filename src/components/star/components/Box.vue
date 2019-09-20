@@ -1,6 +1,6 @@
-<template>
-  <div class="container">
-    <div class="soul-star-box">
+<!-- <template> -->
+  <!-- <div class="container"> -->
+    <!-- <div class="soul-star-box"> -->
       <!-- <ul>
         <li class="point" style="transform: translate3d(150px, 0px, 0px);">1</li>
         <li class="point" style="transform: translate3d(130px, 10px, 49px);">2</li>
@@ -35,65 +35,65 @@
         <li class="point" style="transform: translate3d(150px, 300px, 0px);">31</li>
       </ul> -->
 
-    </div>
-  </div>
-</template>
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </template> -->
 
-<script>
-export default {
-  name: 'SoulStarBox',
-  methods: {
-    test () {
-      console.log('6')
-    }
-  }
-}
-</script>
-
-<style>
-.container {
-  width: 100%;
-  transform-style: preserve-3d;
-  perspective: 600px;
-}
-.soul-star-box {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  transition: 3s linear;
-  transform-style: preserve-3d;
-  transform:
-    translate3d(30px, 50px, 0px)
-    rotateX(40deg)
-    rotateY(0deg)
-    rotateZ(0deg);
-  animation: revolution 20s linear 0s infinite;
-  border-radius: 20px;
-}
-.point {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: pink;
-  border-radius: 5px;
-}
-/* 公转 */
-@keyframes revolution {
-  0% {
-    transform: translateX(40px) translateY(150px) rotateY(0deg);
-  }
-  100% {
-    transform: translateX(40px) translateY(150px) rotateY(360deg);
-  }
-}
-
-/* 每个点的自转，以保持面向屏幕 */
-@keyframes rotation1 {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(0deg) rotateY(-360deg) rotateZ(0deg);
-  }
-}
-</style>
+<!-- // <script>
+// export default {
+//   name: 'SoulStarBox',
+//   methods: {
+//     test () {
+//       console.log('6')
+//     }
+//   }
+// }
+// </script>
+//
+// <style>
+// .container {
+//   width: 100%;
+//   transform-style: preserve-3d;
+//   perspective: 600px;
+// }
+// .soul-star-box {
+//   position: relative;
+//   width: 300px;
+//   height: 300px;
+//   transition: 3s linear;
+//   transform-style: preserve-3d;
+//   transform:
+//     translate3d(30px, 50px, 0px)
+//     rotateX(40deg)
+//     rotateY(0deg)
+//     rotateZ(0deg);
+//   animation: revolution 20s linear 0s infinite;
+//   border-radius: 20px;
+// }
+// .point {
+//   position: absolute;
+//   width: 10px;
+//   height: 10px;
+//   background-color: pink;
+//   border-radius: 5px;
+// }
+// /* 公转 */
+// @keyframes revolution {
+//   0% {
+//     transform: translateX(40px) translateY(150px) rotateY(0deg);
+//   }
+//   100% {
+//     transform: translateX(40px) translateY(150px) rotateY(360deg);
+//   }
+// }
+//
+// /* 每个点的自转，以保持面向屏幕 */
+// @keyframes rotation1 {
+//   0% {
+//     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+//   }
+//   100% {
+//     transform: rotateX(0deg) rotateY(-360deg) rotateZ(0deg);
+//   }
+// }
+// </style> -->

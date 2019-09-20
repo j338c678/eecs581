@@ -3,7 +3,7 @@
   2.三个slider切换
  -->
 <template>
-  <!-- 头部 -->
+  <!-- hearder -->
   <soul-base-header
     class="soul-square-header"
     :class="{'soul-square-header-hide': isHide}"
@@ -34,8 +34,6 @@
     <template slot="right">Video</template>
   </soul-base-header>
 
-  <!-- 滚动条 -->
-  <!-- 考虑用vuex做双向控制swiper，暂时先放下 -->
 </template>
 
 <script>
@@ -48,7 +46,7 @@ export default {
   },
   data () {
     return {
-      isHide: false // 判断header是否隐藏
+      isHide: false // if header is hidden
     }
   },
   computed: {
@@ -56,17 +54,17 @@ export default {
       get: function () {
         return (this.soulSquare.contentIndex === 0)
       }
-    }, // 判断'关注'是否选中
+    },
     isRecommendEnabled: {
       get: function () {
         return (this.soulSquare.contentIndex === 1)
       }
-    }, // 判断'推荐'是否选中
+    },
     isNewestEnabled: {
       get: function () {
         return (this.soulSquare.contentIndex === 2)
       }
-    }, // 判断'最新'是否选中
+    },
     ...mapState(['soulSquare'])
   },
   watch: {
@@ -85,13 +83,13 @@ export default {
   },
   methods: {
     handleClickFollow () {
-      this.changeSoulSquareContentIndex(0) // 切换到关注页面
+      this.changeSoulSquareContentIndex(0) // switch to follow page
     },
     handleClickRecommend () {
-      this.changeSoulSquareContentIndex(1) // 切换到推荐页面
+      this.changeSoulSquareContentIndex(1) // switch to recommend page
     },
     handleClickNewest () {
-      this.changeSoulSquareContentIndex(2) // 切换到最新页面
+      this.changeSoulSquareContentIndex(2) // switch to newest page
     },
     ...mapMutations([
       'changeSoulSquare',

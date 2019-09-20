@@ -1,10 +1,10 @@
-  
+
 <template>
   <div>
-    <!-- 头部 -->
+    <!-- header -->
     <soul-square-header></soul-square-header>
 
-    <!-- 内容 -->
+    <!-- content -->
     <soul-square-content></soul-square-content>
   </div>
 </template>

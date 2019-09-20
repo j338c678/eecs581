@@ -10,10 +10,6 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      redirect: '/soulsquare'
-    },
-    {
       path: '/soulstar',
       name: 'SoulStar',
       component: SoulStar
@@ -37,10 +33,6 @@ export default new Router({
       path: '/soulself',
       name: 'SoulSelf',
       component: SoulSelf
-    },
-    {
-      path: '*',
-      redirect: '/soulsquare'
     }
   ]
 })

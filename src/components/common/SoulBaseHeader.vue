@@ -1,6 +1,6 @@
 <!--
   Props:
-    fixed  //固定在头部
+    fixed
  -->
 <template>
   <header
@@ -23,7 +23,6 @@
 export default {
   name: 'SoulBaseHeader',
   props: {
-    // 检测header栏是否固定在头部，只要组件属性写了fixed，就算不传值，props中的fixed值也会变成true
     fixed: {
       type: [Boolean],
       default: false

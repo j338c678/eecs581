@@ -9,7 +9,7 @@
       <div class="soul-self-item-bubble">
         <div style="padding: 10px 10px 0 10px;">{{this.itemData.word}}</div>
         <div style="padding: 0 13px 0 10px;">
-          <template v-if="itemData.imgs.count != 0"> <!-- 判断是否有图片 -->
+          <template v-if="itemData.imgs.count != 0"> <!-- if it has img -->
               <template v-for="(url, index) in itemData.imgs.url">
                 <img
                   :src="url"
@@ -49,10 +49,10 @@ export default {
 .soul-self-item {
   display: flex;
   justify-content: center;
-  background-color: #F7F8FA; /* 极浅的灰色 */
+  background-color: #F7F8FA;
 }
 
-/* 左边 */
+/* left */
 .soul-self-item-left {
   position: relative;
   top: 0;
@@ -61,26 +61,26 @@ export default {
   right: 0;
   width: 10%;
 }
-/* 灰色线 */
+/* grey line */
 .soul-self-item-line {
   position: absolute;
   bottom: 0;
   top: 0;
   right: 21px;
   width: 2px;
-  background-color: #E1E7E9; /* 灰色线 */
+  background-color: #E1E7E9;
 }
-/* 太阳图标 */
-/* 太阳背景遮罩 */
+/* sun icon */
+/* sun background */
 .soul-self-item-sun-background {
   position: absolute;
   right: 10px;
   bottom: 7px;
   width: 23px;
   height: 23px;
-  background-color: #F7F8FA; /* 极浅的灰色 */
+  background-color: #F7F8FA;
 }
-/* 正方形 */
+/* square */
 .soul-self-item-sun {
   position: absolute;
   right: 15px;
@@ -89,7 +89,7 @@ export default {
   height: 13px;
   background-color: #FAE9A8;
 }
-/* 旋转45°正方形 */
+/* 45' suqare */
 .soul-self-item-sun::before {
   content: '';
   position: absolute;
@@ -98,7 +98,7 @@ export default {
   transform: rotate(45deg);
   background-color: #FAE9A8;
 }
-/* 中部圆形 */
+/* middle circle */
 .soul-self-item-sun::after {
   content: '';
   position: absolute;
@@ -110,7 +110,7 @@ export default {
   background-color: #FFC92C;
 }
 
-/* 右边 */
+/* right */
 .soul-self-item-right {
   position: relative;
   top: 0;
@@ -121,7 +121,7 @@ export default {
   padding: 15px 0 5px 0;
   width: 82%;
 }
-/* 气泡 */
+/* bubble */
 .soul-self-item-bubble {
   position: relative;
   display: flex;
@@ -130,7 +130,7 @@ export default {
   border-radius: 6px;
   background-color: #fff;
 }
-/* 三角形 */
+/* triangle */
 .soul-self-item-bubble::before {
   content: '';
   position: absolute;

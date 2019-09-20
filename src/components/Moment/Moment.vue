@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="soul-self-header">
     <img :style="imgStyleObject" :src="backgroundImg">
     <div class="soul-self-header-more">更多</div>
@@ -6,7 +6,7 @@
       <div class="soul-self-header-headicon">
         <img src="@/assets/images/headicon/0.png">
       </div>
-      <div class="soul-self-header-nickName">看完瞬间就跑的人</div>
+      <div class="soul-self-header-nickName"></div>
       <div class="soul-self-header-register-date">11天,11个瞬间</div>
       <div class="soul-self-header-tags">旅行</div>
     </div>
@@ -117,4 +117,4 @@ export default {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.4);
 }
-</style>
+</style> -->

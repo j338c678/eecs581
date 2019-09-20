@@ -16,7 +16,7 @@ export default {
     }
   },
   mounted () {
-    // transition结合setTimeout函数可以实现animation的动画
+    // transition and setTimeout function mixed to animation
     setTimeout(() => {
       this.soulwelcomehide = true
     }, 2000)
@@ -26,7 +26,7 @@ export default {
 
 <style>
 /*
-使用flex布局
+flex
 */
 .soul-welcome {
   position: fixed;

@@ -1,7 +1,7 @@
 <template>
   <div class="soul-self-content" :style="styleObject">
     <div>
-      <div style="height: 300px;"><!-- 透明顶部，用于显示背景图 --></div>
+      <div style="height: 300px;"><!-- header，background picture --></div>
       <soul-self-item :itemData="cellItemOption1"></soul-self-item>
       <soul-self-item :itemData="cellItemOption2"></soul-self-item>
     </div>

@@ -31,8 +31,8 @@ export default {
   name: 'SoulChatMessageItem',
   data () {
     return {
-      isAllowMove: true, // 判断是否允许滑动
-      isSpreadOperate_local: false, // 当前侧滑菜单是否展开
+      isAllowMove: true,
+      isSpreadOperate_local: false,
       transitionTime: 0,
       marginLeft: 0,
       touches: '',

@@ -1,6 +1,6 @@
 <template>
     <nav class="soul-nav">
-      <!-- 根据vuex中的soulNavCurrent来判断现在选择哪个栏目 -->
+      <!-- selected part -->
       <router-link
         to="/soulstar"
         tag="dl"

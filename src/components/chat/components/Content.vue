@@ -1,7 +1,7 @@
 <template>
   <div class="message-container" :style="styleObject">
     <div>
-      <div style="height: 1rem;"><!-- 把消息框顶出头部区域 --></div>
+      <div style="height: 1rem;"><!-- out of header --></div>
       <soul-chat-message-item></soul-chat-message-item>
       <soul-chat-message-item></soul-chat-message-item>
       <soul-chat-message-item></soul-chat-message-item>
@@ -32,7 +32,7 @@ export default {
     return {
       styleObject: {
         height: (window.innerHeight - 50) + 'px'
-      } // 给message-container自适应高度，否则弹出发布瞬间页面的时候，这里会跟着动
+      }
     }
   },
   methods: {

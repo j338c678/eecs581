@@ -8,7 +8,7 @@
       <swiper-slide>
         <div class="swiper-follow" :style="styleObject">
           <div>
-            <!-- 搜索框 -->
+            <!-- searching -->
             <soul-square-search></soul-square-search>
             <soul-cell-item></soul-cell-item>
           </div>
@@ -17,7 +17,7 @@
       <swiper-slide>
         <div class="swiper-recommend" :style="styleObject">
           <div>
-            <!-- 搜索框 -->
+            <!-- searching -->
             <soul-square-search></soul-square-search>
             <template v-for="itemValue in recommendData">
               <soul-cell-item
@@ -31,7 +31,7 @@
       <swiper-slide>
         <div class="swiper-newest" :style="styleObject">
           <div>
-            <!-- 搜索框 -->
+            <!-- searching -->
             <soul-square-search></soul-square-search>
             <template v-for="itemValue in newestData">
               <soul-cell-item
@@ -157,10 +157,10 @@ export default {
     ])
   },
   mounted () {
-    this.swiper.slideTo(1) // 切换到‘推荐’页面
-    this.getSquareRecommendInfo() // 获取推荐页面信息
-    this.getSquareNewestInfo() // 获取最新页面信息
-    this.initBScroll() // 初始化BScroll
+    this.swiper.slideTo(1) // swtich to ‘recommend’ page
+    this.getSquareRecommendInfo() // get recommend info
+    this.getSquareNewestInfo() // get newest info
+    this.initBScroll() //  inital BScroll
   }
 }
 </script>
