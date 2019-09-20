@@ -1,0 +1,128 @@
+{
+  "cellItemOption1": {
+    "icon": 0,
+    "nickName": "#From Happy Star",
+    "timeStamp": "3h",
+    "imgs": {
+      "url": [],
+      "count": 0
+    },
+    "word": "you may only be a person in this world,but for someone,you’re the world.",
+    "topic": " ",
+    "location": " ",
+    "iconHeartCount": 5,
+    "iconCommentCount": 20,
+    "iconForwardCount": 2,
+    "key": "jdjsfj"
+  },
+  "cellItemOption2": {
+    "icon": 0,
+    "nickName": "#From Loney Star",
+    "timeStamp": "6h",
+    "imgs": {
+      "url": [
+        "./static/photo1.jpg",
+        "./static/photo1.jpg"
+      ],
+      "count": 2
+    },
+    "word": "just because someone doesn‘t love you the way you want them to,doesn‘t mean they don‘t love you with all they have. ",
+    "topic": "#Emotion",
+    "location": "Lawrence, Kansas",
+    "iconHeartCount": 56,
+    "iconCommentCount": 87,
+    "iconForwardCount": 13,
+    "key": "fhgff"
+  },
+  "cellItemOption3": {
+    "icon": 0,
+    "nickName": "#From Love Star",
+    "timeStamp": "11hs",
+    "imgs": {
+      "url": [
+        "./static/photo1.jpg",
+        "./static/photo1.jpg",
+        "./static/photo1.jpg"
+      ],
+      "count": 3
+    },
+    "word": "There will always be people who’ll hurt you, so you need to continue trusting,just be careful.",
+    "topic": " ",
+    "location": "Boston",
+    "iconHeartCount": 9,
+    "iconCommentCount": 0,
+    "iconForwardCount": 0,
+    "key": "jkuiyr"
+  },
+  "cellItemOption4": {
+    "icon": 0,
+    "nickName": "#From Smart Star",
+    "timeStamp": "24h",
+    "imgs": {
+      "url": [
+        "./static/photo1.jpg",
+        "./static/photo1.jpg",
+        "./static/photo1.jpg",
+        "./static/photo1.jpg"
+      ],
+      "count": 4
+    },
+    "word": "Don‘t waste your time on a man/woman, who isn‘t willing to waste their time on you. ",
+    "topic": " ",
+    "location": " ",
+    "iconHeartCount": 0,
+    "iconCommentCount": 0,
+    "iconForwardCount": 0,
+    "key": "dsadeg"
+  },
+  "cellItemOption5": {
+    "icon": 0,
+    "nickName": "#From Brave Star",
+    "timeStamp": "35 h",
+    "imgs": {
+      "url": [
+        "./static/photo1.jpg"
+      ],
+      "count": 1
+    },
+    "word": "Wearing a blue skirt, microstrip wheat color skin looks so healthy, black hair like a waterfall vertically over the shoulders, with a reddish face.",
+    "topic": " ",
+    "location": " ",
+    "iconHeartCount": 3,
+    "iconCommentCount": 0,
+    "iconForwardCount": 0,
+    "key": "hkfhffg"
+  },
+  "cellItemOption6": {
+    "icon": 0,
+    "nickName": "#From Rich Star",
+    "timeStamp": "40h",
+    "imgs": {
+      "url": [],
+      "count": 0
+    },
+    "word": "An unacceptable love needs no sorrow but time- sometime for forgetting.a badly-hurt heart needs no sympathy but understanding. ",
+    "topic": " ",
+    "location": " ",
+    "iconHeartCount": 0,
+    "iconCommentCount": 0,
+    "iconForwardCount": 0,
+    "key": "fddfgre"
+  },
+  "cellItemOption7": {
+    "icon": 0,
+    "nickName": "#From Entertainment Star",
+    "timeStamp": "43h",
+    "imgs": {
+      "url": [],
+      "count": 0
+    },
+    "word": "Lmao",
+    "topic": " ",
+    "location": " ",
+    "iconHeartCount": 5,
+    "iconCommentCount": 36,
+    "iconForwardCount": 0,
+    "key": "fddfgdre"
+  }
+}
