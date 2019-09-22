@@ -1,9 +1,9 @@
 <template>
 	<div>
 		<div style="text-align: center;margin-bottom: 30px;padding-top: 10px;">
-			<!-- <img class="logo" src="@/assets/vux_logo.png"> -->
+			<img class="logo" src="@/assets/images/headicon/0.png">
 		</div>
-		<group title="Login" label-width="10">
+		<group title="Login">
 			<x-input title="ID:" v-model="user.name"></x-input>
 			<x-input title="Password:" type="password" v-model="user.password" @blur.prevent="inputLoseFocus"></x-input>
 		</group>
