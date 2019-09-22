@@ -9,6 +9,14 @@ import preview from 'vue-photo-preview'
 import 'swiper/dist/css/swiper.css'
 import 'vue-photo-preview/dist/skin.css'
 
+//9/21/2019
+import {LoadingPlugin} from 'vux'
+Vue.use(LoadingPlugin)
+
+import  { ToastPlugin } from 'vux'
+Vue.use(ToastPlugin)
+
+//
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
 Vue.use(preview)

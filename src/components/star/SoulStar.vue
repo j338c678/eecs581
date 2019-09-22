@@ -23,10 +23,12 @@
     </flexbox> -->
       <!-- <button style:"width: 12px;">fasd</button> -->
   <!-- </img> -->
+  <soul-Nav></soul-Nav>
   </div>
 </template>
 
 <script>
+import SoulNav from '../common/SoulNav'
 import{
     Flexbox,
     FlexboxItem,
@@ -43,6 +45,7 @@ export default {
 },
   name: 'SoulStar',
   components: {
+    SoulNav,
     Flexbox,
     FlexboxItem,
     GridItem,

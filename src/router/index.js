@@ -4,13 +4,19 @@ import SoulStar from '@/components/star/SoulStar'
 import SoulSquare from '@/components/square/SoulSquare'
 import SoulChat from '@/components/chat/SoulChat'
 import SoulSelf from '@/components/self/SoulSelf'
+import SoulLogin from '@/components/Login/SoulLogin'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/soulstar',
+      path: '/',
+      name: 'SoulLogin',
+      component: SoulLogin
+    },
+    {
+      path: '/soulStar',
       name: 'SoulStar',
       component: SoulStar
     },
@@ -25,14 +31,9 @@ export default new Router({
       component: SoulChat
     },
     {
-      path: '/soulMoment',
-      name: 'soulMoment',
-      component: () => import('@/components/Moment/Moment')
-    },
-    {
       path: '/soulself',
       name: 'SoulSelf',
       component: SoulSelf
-    }
+    },
   ]
 })
