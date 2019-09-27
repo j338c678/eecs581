@@ -7,8 +7,8 @@
         @click.native="changeSoulNavCurrent('soulStar')"
       >
         <dt><img
-          style="width: 0.7rem; height: 0.7rem;"
-          src="@/assets/images/icon/icon_star.png">
+          style="width: 0.8rem; height: 0.8rem;"
+          src="@/assets/images/icon/icon_star_black.png">
         </dt>
 
         <dd :class="{'soul-nav-current': soulNavCurrent === 'soulStar'}">
@@ -23,8 +23,8 @@
       >
         <dt>
 
-          <img style="width: 0.7rem; height: 0.7rem;"
-        src="@/assets/images/icon/icon_square.png">
+          <img style="width: 0.6rem; height: 0.6rem;"
+        src="@/assets/images/icon/icon_square_black.png">
         </dt>
         <dd :class="{'soul-nav-current': soulNavCurrent === 'soulSquare'}">
           SQUARE
@@ -48,8 +48,8 @@
       >
         <dt>
           <img
-            style="width: 0.7rem; height: 0.7rem;"
-            src="@/assets/images/icon/icon_chat.png"
+            style="width: 0.8rem; height: 0.8rem;"
+            src="@/assets/images/icon/icon_chat_black.png"
           >
         </dt>
         <dd :class="{'soul-nav-current': soulNavCurrent === 'soulChat'}">
@@ -62,8 +62,8 @@
         tag="dl"
         @click.native="changeSoulNavCurrent('soulSelf')"
       >
-        <dt><img style="width: 0.7rem; height: 0.7rem;"
-        src="@/assets/images/icon/icon_self.png">
+        <dt><img style="width: 0.8rem; height: 0.8rem;"
+        src="@/assets/images/icon/icon_self_black.png">
         </dt>
         <dd :class="{'soul-nav-current': soulNavCurrent === 'soulSelf'}">
           SELF
@@ -87,6 +87,8 @@ export default {
     handleClickAdd () {
       this.changeSoulAddIsShow(!this.soulAdd.isShow)
     },
+    //9/21
+
     ...mapMutations([
       'changeSoulAddIsShow',
       'changeSoulNavCurrent'
