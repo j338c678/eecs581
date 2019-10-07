@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <div style="height: 1rem;"><!-- 把搜索框顶出头部高度 --></div>
+    <div style="height: 1rem;"><!-- height of header --></div>
     <div class="soul-square-search">
       <div class="soul-square-search-icon">
         <img

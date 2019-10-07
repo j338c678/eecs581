@@ -66,20 +66,20 @@ export default {
       newestData: {},
       styleObject: {
         height: (window.innerHeight - 50) + 'px'
-      }, // 给slide自适应高度，才不会滑动一个slide导致另一个slide也跟着滑动，50是底部导航栏的总高度
+      },
       swiperOption: {
-        resistanceRatio: 0, // swiper到达边缘不能继续滑动
+        resistanceRatio: 0, // swiper can't move
         on: {
-          // 获取当前swiper的index值
+          // get the index of swiper
           slideChangeTransitionStart: function () {
             that.changeSoulSquareContentIndex(this.activeIndex)
           }
         }
-      } // Swiper设置
+      } // Swipersetting
     }
   },
   computed: {
-    // 使用swiper必须要写的
+    // requirement for swiper
     swiper () {
       return this.$refs.soulSquareContentSwiper.swiper
     },
@@ -87,11 +87,11 @@ export default {
   },
   watch: {
     'soulSquare.contentIndex': function (newValue) {
-      this.swiper.slideTo(newValue) // 切换页面
+      this.swiper.slideTo(newValue) // switch pages
     }
   },
   methods: {
-    // 获取推荐页面信息
+    // getrecommendInfo
     getSquareRecommendInfo () {
       axios.get('./static/mock/square-recommend.json')
         .then(this.getSquareRecommendInfoSucc)
@@ -102,7 +102,7 @@ export default {
     getSquareRecommendInfoSucc (res) {
       this.recommendData = res.data
     },
-    // 获取最新页面信息
+    // getnewestInfo
     getSquareNewestInfo () {
       axios.get('./static/mock/square-newest.json')
         .then(this.getSquareNewestInfoSucc)
@@ -113,14 +113,11 @@ export default {
     getSquareNewestInfoSucc (res) {
       this.newestData = res.data
     },
-    // 给每个栏目初始化一个BScroll
     initBScroll () {
-      // 绑定Better-Scroll，必须设置了probeType才能监测scroll事件
       this.bScrollFollow = new BScroll('.swiper-follow', {click: true, tap: true, probeType: 2})
       this.bScrollRecommend = new BScroll('.swiper-recommend', {click: true, tap: true, probeType: 2})
       this.bScrollNewest = new BScroll('.swiper-newest', {click: true, tap: true, probeType: 2})
 
-      // 给每个swiper绑定scroll事件
       this.bScrollFollow.on('scroll', (pos) => {
         this.changeSoulSquareMovingEventDirection(this.bScrollFollow.movingDirectionY)
         this.changeSoulSquareMovingEventTopY(pos.y)
@@ -136,7 +133,6 @@ export default {
         this.changeSoulSquareMovingEventTopY(pos.y)
       })
 
-      // 给每个swiper绑定scrollStart事件
       this.bScrollFollow.on('scrollStart', () => {
         this.bScrollFollow.refresh()
       })

@@ -1,7 +1,3 @@
-<!-- 该组件在SoulBaseHeader基础上增加了：
-  1.自动隐藏功能
-  2.三个slider切换
- -->
 <template>
   <!-- hearder -->
   <soul-base-header

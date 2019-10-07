@@ -10,9 +10,6 @@
       <router-view/>
     </keep-alive>
 
-    <!-- 底部导航栏 -->
-    <!-- <soul-nav></soul-nav> -->
-
     <!-- 弹出Add -->
     <soul-add></soul-add>
   </div>

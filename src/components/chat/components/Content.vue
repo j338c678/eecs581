@@ -5,6 +5,7 @@
       <soul-chat-message-item></soul-chat-message-item>
       <soul-chat-message-item></soul-chat-message-item>
       <soul-chat-message-item></soul-chat-message-item>
+      <!-- <soul-chat-message-item></soul-chat-message-item>
       <soul-chat-message-item></soul-chat-message-item>
       <soul-chat-message-item></soul-chat-message-item>
       <soul-chat-message-item></soul-chat-message-item>
@@ -14,13 +15,13 @@
       <soul-chat-message-item></soul-chat-message-item>
       <soul-chat-message-item></soul-chat-message-item>
       <soul-chat-message-item></soul-chat-message-item>
-      <soul-chat-message-item></soul-chat-message-item>
-      <soul-chat-message-item></soul-chat-message-item>
+      <soul-chat-message-item></soul-chat-message-item> -->
     </div>
   </div>
 </template>
 
 <script>
+// import {mapMutations } from 'vuex'
 import BScroll from 'better-scroll'
 import SoulChatMessageItem from './MessageItem'
 export default {
@@ -41,7 +42,10 @@ export default {
       this.bScrollMessage.on('scrollStart', () => {
         this.bScrollMessage.refresh()
       })
-    }
+    },
+    // ...mapMutations([
+    //   'changeSoulNavCurrent'
+    // ])
   },
   mounted () {
     this.initBScroll()

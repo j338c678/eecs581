@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header":style="backgroundDiv">
     <!-- <audio class="bgm" autoplay="autoplay" preload="auto">
          <source src="/static/audios/soul.mp3"></source>
     </audio> -->
@@ -7,15 +7,23 @@
     <!-- </div> -->
      <!-- <embed type="video/mp3" src="static/audios/soul.mp3" autoplay="autoplay" loop="true" hidden="false"></embed> -->
     <!-- <img src="@/assets/images/background/main_background.jpg" style="width: 8rem; height: 15.5rem;"> -->
+
+
+
+
     <div class="middle" :style="backgroundDiv">
-       <!-- <group-title>sfsdf</group-title> -->
-       <!-- <divide></divide> -->
+
       <grid :show-lr-borders="false" :show-vertical-dividers="false">
         <grid-item ><div class="button1">voice chat</div></grid-item>
         <grid-item ><div class="button2">video chat</div></grid-item>
         <grid-item ><div class="button3">Let'sTalk</div></grid-item>
       </grid>
-      </div>
+    </div>
+
+
+
+
+
     <!-- <div class="img1"></div> -->
       <!-- <flexbox>
       <flexbox-item><div class="flex-demo">1</div></flexbox-item>
@@ -55,12 +63,19 @@ export default {
 </script>
 
 <style>
-.middle {
-    height: 800px;
-    width: auto;
-    background: no-repeat center top;
-    background-size: contain;
+.middle
+{
+  height:23spx;
+
 }
+.header
+{
+  height: 800px;
+  background: no-repeat center top;
+  background-size: cover;
+  background-size: contain;
+}
+
   /* .img1
   {
     width: 200px;

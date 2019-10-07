@@ -19,9 +19,9 @@
         <div><span>11-26 00:35</span></div>
       </div>
     </div>
-    <div class="message-item-operate" style="background-color: #26D4D0; color: #fff"><span>更多</span></div>
-    <div class="message-item-operate" style="background-color: #26D4D0; color: #fff"><span>置顶</span></div>
-    <div class="message-item-operate" style="background-color: #FFE346; color: #fff"><span>删除</span></div>
+    <div class="message-item-operate" style="background-color: #26D4D0; color: #fff"><span>More</span></div>
+    <div class="message-item-operate" style="background-color: #26D4D0; color: #fff"><span>Sticky</span></div>
+    <div class="message-item-operate" style="background-color: #FFE346; color: #fff"><span>Delete</span></div>
   </div>
 </template>
 
