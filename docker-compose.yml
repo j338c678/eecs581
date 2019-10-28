@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  #mysql:
+  #  image: mysql:5
+  #  restart: always
+  #  ports:
+  #    - 3306:3306
+  #  environment:
+  #    MYSQL_ROOT_PASSWORD: yLH81JLGexLOVQ3K
+  #  volumes:
+  #    - ./dbs/mysql:/var/lib/mysql
+
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: letstalk
+    ports:
+      - 1874:1874
+   # depends_on:
+   # - mysql
