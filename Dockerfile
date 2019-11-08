@@ -4,7 +4,10 @@ RUN npm install -g vue-cli
 RUN npm i -D webpack-cli
 
 # install simple http server for serving static content
-#RUN npm install -g http-server
+RUN npm install -g http-server
+
+# install the mysql database
+RUN npm install mysql
 
 # make the 'app' folder the current working directory
 WORKDIR ../eecs581
@@ -23,6 +26,7 @@ RUN npm install --save-dev webpack-dev-server@2.9.7
 
 #Expose Application Port
 EXPOSE 1874
+EXPOSE 3306
 
 # build app for production with minification
 CMD ["npm", "run", "dev"]
