@@ -16,9 +16,9 @@ Vue.use(LoadingPlugin)
 import  { ToastPlugin } from 'vux'
 Vue.use(ToastPlugin)
 
-const route_testdb = require('./src/router/routes.js');
+//const route_testdb = require('./router/routes.js');
 // import { route_testdb } from 'router/routes.js'
-Vue.use('/testdb', route_testdb)
+//Vue.use('/testdb', route_testdb)
 
 //
 Vue.config.productionTip = false
