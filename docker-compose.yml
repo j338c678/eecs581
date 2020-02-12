@@ -12,7 +12,7 @@ services:
       - ./dbs/mysql:/var/lib/mysql
   nodeAPI:
     build:
-      context: NodeAPI/node-mysql/
+      context: Node/node-mysql/
       dockerfile: Dockerfile
     image: letstalkapi
     ports:
