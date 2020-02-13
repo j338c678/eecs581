@@ -1,5 +1,4 @@
 const db = require("../models");
-const Tutorial = db.tutorials;
 const Users = db.users;
 const Op = db.Sequelize.Op;
 
@@ -36,7 +35,8 @@ exports.create = (req, res) => {
 // Create and Save a new User
 exports.createUser = (req, res) => {
   // Validate request
-  if (!req.body.title || !req.body.password || !req.body.fname  || !req.body.lname  || !req.body.gender) {
+  //if (!req.body.username || !req.body.password || !req.body.fname  || !req.body.lname  || !req.body.gender) {
+  if (!req.body.username) {
     res.status(400).send({
       message: "Content must have title, password, fname, lname, and gender. Optional: birthday, genderPref, agePref"
     });
@@ -45,7 +45,7 @@ exports.createUser = (req, res) => {
 
   // Create a User
   const user = {
-    username: req.body.title,
+    username: req.body.username,
     password: req.body.password,
     fname: req.body.fname,
     lname: req.body.lname,
@@ -63,7 +63,7 @@ exports.createUser = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Tutorial."
+          err.message || "Some error occurred while creating the User."
       });
     });
 };

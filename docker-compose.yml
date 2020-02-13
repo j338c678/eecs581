@@ -10,15 +10,15 @@ services:
       MYSQL_DATABASE: letsTalk
     volumes:
       - ./dbs/mysql:/var/lib/mysql
-  nodeAPI:
-    build:
-      context: NodeAPI/node-mysql/
-      dockerfile: Dockerfile
-    image: letstalkapi
-    ports:
-      - 8080:8080
-    depends_on:
-      - mysql
+#  nodeAPI:
+#    build:
+#      context: NodeAPI/node-mysql/
+#      dockerfile: Dockerfile
+#    image: letstalkapi
+#    ports:
+#      - 8080:8080
+#    depends_on:
+#      - mysql
   letsTalk:
     build:
       context: .
@@ -28,4 +28,4 @@ services:
       - 1874:1874
     depends_on:
     - mysql
-    - nodeAPI
+#    - nodeAPI

@@ -1,12 +1,20 @@
 module.exports = app => {
   const tutorials = require("../controllers/api.controller.js");
-
+  const users = require("../controllers/user.controller.js");
   var router = require("express").Router();
 
-  // Create a new Tutorial
-  router.post("/", tutorials.create);
+
+  //User Table API Endpoints
   //Create a new User
-  router.post("/user", tutorials.createUser);
+  router.post("/user", users.createUser);
+  router.get("/user/:id", users.findUser);
+  router.get("/user/findAll", users.findAllUsers);
+  router.put("/user/:id", users.updateUser);
+  router.delete("/user/:id", users.deleteUser);
+
+  //Tutorial Stuff
+  // Create a new
+  router.post("/", tutorials.create);
 
   // Retrieve all Tutorials
   router.get("/", tutorials.findAll);
