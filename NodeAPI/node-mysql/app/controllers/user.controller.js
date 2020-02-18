@@ -39,12 +39,35 @@ exports.createUser = (req, res) => {
 };
 
 exports.findUser = (req, res) => {
+  const username = req.params.username;
 
-}
+  user.findByPk(username)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Tutorial with id=" + id
+      });
+    });
+};
+
 
 exports.findAllUsers = (req, res) => {
+  const username = req.query.username;
+  var condition = username ? { username: { [Op.like]: `%${username}%` } } : null;
 
-}
+  user.findAll({ where: condition })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
+      });
+    });
+};
 
 exports.updateUser = (req, res) => {
 
