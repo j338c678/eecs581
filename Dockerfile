@@ -2,6 +2,7 @@ FROM node:lts-alpine
 
 RUN npm install -g vue-cli
 RUN npm i -D webpack-cli
+RUN npm install --save fs net
 
 # install simple http server for serving static content
 RUN npm install -g http-server

@@ -4,6 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import axios from 'axios'
+Vue.prototype.$ajax=axios 
+// import api from './api/index.js'
+// Vue.prototype.$api = api
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import preview from 'vue-photo-preview'
 import 'swiper/dist/css/swiper.css'
@@ -15,6 +19,10 @@ Vue.use(LoadingPlugin)
 
 import  { ToastPlugin } from 'vux'
 Vue.use(ToastPlugin)
+
+//const route_testdb = require('./router/routes.js');
+// import { route_testdb } from 'router/routes.js'
+//Vue.use('/testdb', route_testdb)
 
 //
 Vue.config.productionTip = false

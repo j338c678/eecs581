@@ -1,3 +1,5 @@
+console.log("ON CONNECTION.JS\n");
+
 /**
  * exports of mysql module
  * @type {Object}
@@ -12,7 +14,7 @@ let connection = mysql.createConnection({
   host: "127.0.0.1",
   port: "3306",
   user: "root",
-  password: "yLH81JLGexLOVQ3K",
+  password: "letsTalk!",
   database: "letsTalk"
 });
 
