@@ -4,6 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import axios from 'axios'
+Vue.prototype.$ajax=axios 
+// import api from './api/index.js'
+// Vue.prototype.$api = api
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import preview from 'vue-photo-preview'
 import 'swiper/dist/css/swiper.css'
