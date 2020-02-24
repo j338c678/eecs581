@@ -8,7 +8,7 @@
 			<x-input title="Password:" type="password" v-model="user.password" @blur.prevent="inputLoseFocus"></x-input>
 		</group>
 		<box gap="30px 10px">
-			<x-button type="primary" @click.native="login">Login</x-button>
+			<x-button type="primary" @click.native="mounted">Login</x-button>
 		</box>
 	</div>
 </template>
@@ -22,6 +22,11 @@
 	} from 'vux'
 	import Vue from 'vue'
 	export default {
+	// 	created () {
+  //  this.$api.post('/user', null, r => {
+  //    console.log(r)
+  //  	})
+	// },
     name: 'SoulLogin',
 		components: {
 			XInput,
@@ -38,6 +43,24 @@
 			}
 		},
 		methods: {
+			mounted(){
+							this.$ajax({
+			      method: 'post',
+			      url: 'http://localhost:8080/api/tutorials/user',
+						data:{
+							username: "root",
+	    				password: this.user.password,
+	    				fname: "rootFN",
+	    				lname: "rootLN",
+	    				gender: "Male"
+      			},
+						header:{"Content-Type":"application/json"},
+			    }).then(response=>{
+				    console.log(response);
+			    }).catch(function(err){
+        console.log(err)
+    		});
+			},
 			login() {
 				Vue.$vux.loading.show({
 					text: 'loging'
@@ -57,7 +80,6 @@
 					}
 					Vue.$vux.loading.hide()
 				}, 300)
-
 			},
 			inputLoseFocus() {
 				setTimeout(() => {
