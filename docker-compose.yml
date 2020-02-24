@@ -13,11 +13,6 @@ services:
       MYSQL_DATABASE: letsTalk
     volumes:
       - ./dbs/mysql:/var/lib/mysql
-  start_dependencies:
-    image: dadarek/wait-for-dependencies
-    depends_on:
-      - mysql
-    command: 172.18.0.2:3306
   nodeAPI:
     build:
       context: NodeAPI/node-mysql/
