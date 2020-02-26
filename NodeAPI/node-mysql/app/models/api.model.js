@@ -14,33 +14,33 @@ module.exports = (sequelize, Sequelize) => {
   return Tutorial;
 };
 
-module.exports = (sequelize, Sequelize) => {
-  const Users = sequelize.define("users", {
+module.exports = (sequelize, DataTypes) => {
+  var Users = sequelize.define("users", {
     username: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING,
+      primaryKey: true
     },
     password: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     fname: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     lname: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     gender: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     birthday: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     genderPref: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     agePref: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     }
   });
-
   return Users;
 };

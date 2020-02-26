@@ -41,7 +41,7 @@ exports.createUser = (req, res) => {
 exports.findUser = (req, res) => {
   const username = req.params.username;
 
-  user.findByPk(username)
+  Users.findByPk(username)
     .then(data => {
       res.send(data);
     })
@@ -57,7 +57,7 @@ exports.findAllUsers = (req, res) => {
   const username = req.query.username;
   var condition = username ? { username: { [Op.like]: `%${username}%` } } : null;
 
-  user.findAll({ where: condition })
+  Users.findAll({ where: condition })
     .then(data => {
       res.send(data);
     })
