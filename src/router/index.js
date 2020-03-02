@@ -5,8 +5,8 @@ import SoulSquare from '@/components/square/SoulSquare'
 import SoulChat from '@/components/chat/SoulChat'
 import SoulSelf from '@/components/self/SoulSelf'
 import SoulLogin from '@/components/Login/SoulLogin'
-import SoulMessage from '@/components/Message/SoulMessage'
-import SoulCreateUser from '@/components/Login/SoulCreateUser'
+import CreateUser from '@/components/Login/CreateUser'
+// import SoulMessage from '@/components/Message/SoulMessage'
 
 Vue.use(Router)
 
@@ -37,15 +37,15 @@ export default new Router({
       name: 'SoulSelf',
       component: SoulSelf
     },
-    {
-      path: '/soulmessage',
-      name: 'SoulMessage',
-      component: SoulMessage
-    },
+    // {
+    //   path: '/soulmessage',
+    //   name: 'SoulMessage',
+    //   component: SoulMessage
+    // },
     {
       path: '/soulcreateuser',
-      name: 'SoulCreateUser',
-      component: SoulCreateUser
+      name: 'CreateUser',
+      component: CreateUser
     },
   ]
 })

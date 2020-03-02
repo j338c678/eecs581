@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<div style="text-align: center;margin-bottom: 30px;padding-top: 10px;">
+		<!-- <div style="text-align: center;margin-bottom: 30px;padding-top: 10px;">
 			<img class="logo" src="@/assets/images/headicon/0.png">
-		</div>
+		</div> -->
 		<group title="Login">
 			<x-input title="ID:" v-model="user.name"></x-input>
 			<x-input title="Password:" type="password" v-model="user.password" @blur.prevent="inputLoseFocus"></x-input>
@@ -80,15 +80,15 @@
 				}, 300)
 			},
 			SignIn() {
-				Vue.$vux.loading.show({
-					text: 'loging'
-				})
-				setTimeout(() => {
-						this.$router.push({
-							path: '/CreateUser'
-						})
-					Vue.$vux.loading.hide()
-				}, 300)
+				// Vue.$vux.loading.show({
+				// 	text: 'loging'
+				// })
+				// setTimeout(() => {
+				// 		this.$router.push({
+				// 			path: '/soulcreateuser'
+				// 		})
+				// 	Vue.$vux.loading.hide()
+				// }, 300)
 			},
 			inputLoseFocus() {
 				setTimeout(() => {

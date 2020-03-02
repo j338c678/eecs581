@@ -8,9 +8,9 @@
 		<group title="Password">
 			<x-input v-model="user.password"></x-input>
 		</group>
-		<!-- <group title="Password Confirm">
+		<group title="Password Confirm">
 			<x-input type="password" v-model="user.password" @blur.prevent="inputLoseFocus"></x-input>
-		</group> -->
+		</group>
 		<group title="First Name">
 			<x-input v-model="user.fname"></x-input>
 		</group>
@@ -56,7 +56,6 @@
 		XInput,
 		Group,
 		XButton,
-		HEAD,
 		Box,
 		Datetime,
 		Selector,
@@ -66,8 +65,17 @@
 	} from 'vux'
 	import Vue from 'vue'
 	export default {
-    name: 'SoulCreateUser',
+    name: 'CreateUser',
 		components: {
+			XInput,
+			Group,
+			XButton,
+			Box,
+			Datetime,
+			Selector,
+			ButtonTab,
+			ButtonTabItem,
+			XHeader
 		},
 		data() {
 			return {
