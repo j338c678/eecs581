@@ -1,6 +1,6 @@
 <template>
 	<div>
-    	<x-header>Welcomec</x-header>
+    	<x-header>Welcome</x-header>
    		<br>
 		<group title="Account">
 			<x-input v-model="user.name"></x-input>

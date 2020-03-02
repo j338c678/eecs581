@@ -80,15 +80,15 @@
 				}, 300)
 			},
 			SignIn() {
-				// Vue.$vux.loading.show({
-				// 	text: 'loging'
-				// })
-				// setTimeout(() => {
-				// 		this.$router.push({
-				// 			path: '/soulcreateuser'
-				// 		})
-				// 	Vue.$vux.loading.hide()
-				// }, 300)
+				Vue.$vux.loading.show({
+					text: 'loging'
+				})
+				setTimeout(() => {
+						this.$router.push({
+							path: '/soulcreateuser'
+						})
+					Vue.$vux.loading.hide()
+				}, 300)
 			},
 			inputLoseFocus() {
 				setTimeout(() => {
