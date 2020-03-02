@@ -8,7 +8,10 @@
 			<x-input title="Password:" type="password" v-model="user.password" @blur.prevent="inputLoseFocus"></x-input>
 		</group>
 		<box gap="30px 10px">
-			<x-button type="primary" @click.native="login">Login</x-button>
+			<x-button type="primary" @click.native="mounted">Login</x-button>
+		</box>
+		<box gap="30px 10px">
+			<x-button type="primary" @click.native="SignIn">Signin</x-button>
 		</box>
 	</div>
 </template>
@@ -38,6 +41,24 @@
 			}
 		},
 		methods: {
+			mounted(){
+							this.$ajax({
+			      method: 'post',
+			      url: 'http://localhost:8080/api/tutorials/user',
+						data:{
+							username: "root",
+	    				password: this.user.password,
+	    				fname: "rootFN",
+	    				lname: "rootLN",
+	    				gender: "Male"
+      			},
+						header:{"Content-Type":"application/json"},
+			    }).then(response=>{
+				    console.log(response);
+			    }).catch(function(err){
+        console.log(err)
+    		});
+			},
 			login() {
 				Vue.$vux.loading.show({
 					text: 'loging'
@@ -46,7 +67,7 @@
 					if (this.user.password === 'admin') {
 						// Vue.ls.set('token', this.user.name, 60 * 60 * 1000)
 						this.$router.push({
-							path: this.$route.query.redirect ? this.$route.query.redirect : '/soulStar'
+							path: '/soulStar'
 						})
 					} else {
 						this.$vux.toast.show({
@@ -57,7 +78,17 @@
 					}
 					Vue.$vux.loading.hide()
 				}, 300)
-
+			},
+			SignIn() {
+				Vue.$vux.loading.show({
+					text: 'loging'
+				})
+				setTimeout(() => {
+						this.$router.push({
+							path: '/CreateUser'
+						})
+					Vue.$vux.loading.hide()
+				}, 300)
 			},
 			inputLoseFocus() {
 				setTimeout(() => {

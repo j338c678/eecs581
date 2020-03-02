@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<br>
     	<x-header>Welcomec</x-header>
    		<br>
 		<group title="Account">
@@ -57,6 +56,7 @@
 		XInput,
 		Group,
 		XButton,
+		HEAD,
 		Box,
 		Datetime,
 		Selector,
@@ -68,15 +68,6 @@
 	export default {
     name: 'SoulCreateUser',
 		components: {
-			XInput,
-			Group,
-			XButton,
-			Box,
-			Datetime,
-			Selector,
-			ButtonTab,
-			ButtonTabItem,
-			XHeader
 		},
 		data() {
 			return {
