@@ -8,7 +8,7 @@
 			<x-input title="Password:" type="password" v-model="user.password" @blur.prevent="inputLoseFocus"></x-input>
 		</group>
 		<box gap="30px 10px">
-			<x-button type="primary" @click.native="mounted">Login</x-button>
+			<x-button type="primary" @click.native="login">Login</x-button>
 		</box>
 		<box gap="30px 10px">
 			<x-button type="primary" @click.native="SignIn">Signin</x-button>
@@ -41,43 +41,18 @@
 			}
 		},
 		methods: {
-			mounted(){
-							this.$ajax({
-			      method: 'post',
-			      url: 'http://localhost:8080/api/tutorials/user',
-						data:{
-							username: "root",
-	    				password: this.user.password,
-	    				fname: "rootFN",
-	    				lname: "rootLN",
-	    				gender: "Male"
-      			},
-						header:{"Content-Type":"application/json"},
-			    }).then(response=>{
-				    console.log(response);
-			    }).catch(function(err){
-        console.log(err)
-    		});
-			},
 			login() {
-				Vue.$vux.loading.show({
-					text: 'loging'
-				})
-				setTimeout(() => {
-					if (this.user.password === 'admin') {
-						// Vue.ls.set('token', this.user.name, 60 * 60 * 1000)
-						this.$router.push({
-							path: '/soulStar'
-						})
-					} else {
-						this.$vux.toast.show({
-							text: 'wrong id or Password！',
-							type: 'text',
-							width: '15em'
-						})
-					}
-					Vue.$vux.loading.hide()
-				}, 300)
+				this.$ajax({
+			    method: 'get',
+			    url: 'http://localhost:8080/api/tutorials/user/'+this.user.name,
+				header:{"Content-Type":"application/json"},
+			    }).then(response=>{
+					let userdata = response
+				    console.log(userdata)
+			    }).catch(function(err){
+        			console.log(err)
+				});
+				console.log(userdata)
 			},
 			SignIn() {
 				Vue.$vux.loading.show({
