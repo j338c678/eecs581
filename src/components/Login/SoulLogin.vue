@@ -1,14 +1,17 @@
 <template>
 	<div>
-		<div style="text-align: center;margin-bottom: 30px;padding-top: 10px;">
+		<!-- <div style="text-align: center;margin-bottom: 30px;padding-top: 10px;">
 			<img class="logo" src="@/assets/images/headicon/0.png">
-		</div>
+		</div> -->
 		<group title="Login">
 			<x-input title="ID:" v-model="user.name"></x-input>
 			<x-input title="Password:" type="password" v-model="user.password" @blur.prevent="inputLoseFocus"></x-input>
 		</group>
 		<box gap="30px 10px">
 			<x-button type="primary" @click.native="login">Login</x-button>
+		</box>
+		<box gap="30px 10px">
+			<x-button type="primary" @click.native="SignIn">Signin</x-button>
 		</box>
 	</div>
 </template>
@@ -39,25 +42,28 @@
 		},
 		methods: {
 			login() {
+				this.$ajax({
+			    method: 'get',
+			    url: 'http://localhost:8080/api/tutorials/user/'+this.user.name,
+				header:{"Content-Type":"application/json"},
+			    }).then(response=>{
+					let userdata = response
+				    console.log(userdata)
+			    }).catch(function(err){
+        			console.log(err)
+				});
+				console.log(userdata)
+			},
+			SignIn() {
 				Vue.$vux.loading.show({
 					text: 'loging'
 				})
 				setTimeout(() => {
-					if (this.user.password === 'admin') {
-						// Vue.ls.set('token', this.user.name, 60 * 60 * 1000)
 						this.$router.push({
-							path: this.$route.query.redirect ? this.$route.query.redirect : '/soulStar'
+							path: '/soulcreateuser'
 						})
-					} else {
-						this.$vux.toast.show({
-							text: 'wrong id or Password！',
-							type: 'text',
-							width: '15em'
-						})
-					}
 					Vue.$vux.loading.hide()
 				}, 300)
-
 			},
 			inputLoseFocus() {
 				setTimeout(() => {

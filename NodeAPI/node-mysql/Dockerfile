@@ -10,6 +10,8 @@ WORKDIR /app
 COPY package*.json /app/
 
 # Install application dependencies
+RUN apt-get update
+RUN apt -y install netcat
 RUN npm install
 
 # Bundle application source code inside Docker image
@@ -20,4 +22,4 @@ COPY . /app
 EXPOSE 8080
 
 # Define runtime using command to run application
-CMD ["node", "server.js"]
+CMD ["./db_watcher.sh"]

@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import axios from 'axios'
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.prototype.$ajax=axios
+// import api from './api/index.js'
+// Vue.prototype.$api = api
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import preview from 'vue-photo-preview'
 import 'swiper/dist/css/swiper.css'
@@ -24,6 +30,7 @@ Vue.use(ToastPlugin)
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
 Vue.use(preview)
+Vue.use(MintUI)
 
 /* eslint-disable no-new */
 new Vue({
