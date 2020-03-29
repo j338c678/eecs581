@@ -20,6 +20,7 @@
 		Box
 	} from 'vux'
 	import Vue from 'vue'
+	import md5 from 'js-md5'
 	export default {
 	// 	created () {
   //  this.$api.post('/user', null, r => {
@@ -85,6 +86,11 @@
 					window.scrollTo(0, 0);
 				}, 100);
 			},
+			getHashFromPassword(){
+				hashedPassword = this.user.password.toUpperCase();
+				hashedPassword = md5(password);
+				return hashedPassword;
+			}
 		},
 	}
 </script>
