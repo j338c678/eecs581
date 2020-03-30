@@ -129,7 +129,7 @@
 			submit(){
 				this.$ajax({
 			    method: 'post',
-			    url: 'http://localhost:8080/api/tutorials/user',
+			    url: 'http://localhost:8080/api/tutorials/users',
 				data:{
 					username: this.user.name,
  	    			password: this.user.password,
