@@ -64,6 +64,7 @@
 		XHeader
 	} from 'vux'
 	import Vue from 'vue'
+	import md5 from 'js-md5'
 	export default {
     name: 'CreateUser',
 		components: {
@@ -143,6 +144,11 @@
 				});
 				this.$router.push({path:'/'})
 			},
+			getHashFromPassword(){
+				hashedPassword = this.user.password.toUpperCase();
+				hashedPassword = md5(password);
+				return hashedPassword;
+			}
 		},
 	}
 </script>
