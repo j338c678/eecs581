@@ -41,19 +41,26 @@
 			}
 		},
 		methods: {
-			login() {
-				this.$ajax({
-			    method: 'get',
-			    url: 'http://localhost:8080/api/tutorials/user/'+this.user.name,
-				header:{"Content-Type":"application/json"},
-			    }).then(response=>{
-					let userdata = response
-				    console.log(userdata)
-			    }).catch(function(err){
-        			console.log(err)
-				});
-				console.log(userdata)
-			},
+            login() {
+                this.$ajax({
+                method: 'get',
+                url: 'http://localhost:8080/api/tutorials/users/'.concat(this.user.name),
+                header:{"Content-Type":"application/json"},
+                }).then(response=>{
+                    // let userdata = response
+                    console.log('http://localhost:8080/api/tutorials/users/'.concat(this.user.name))
+                    console.log(response.data)
+                    if(response.data.password==this.user.password){
+                        console.log("login")
+                    }
+                    else{
+                        console.log("wrong password")
+                    }
+                }).catch(function(err){
+                    console.log(err)
+                });
+                
+            },
 			SignIn() {
 				Vue.$vux.loading.show({
 					text: 'loging'
