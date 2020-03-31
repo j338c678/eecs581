@@ -6,6 +6,9 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import MintUI from 'mint-ui'
+//3/28
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import 'mint-ui/lib/style.css'
 Vue.prototype.$ajax=axios
 // import api from './api/index.js'
@@ -31,12 +34,14 @@ Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
 Vue.use(preview)
 Vue.use(MintUI)
+Vue.use(ElementUI);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
+   render: h => h(App),
   components: { App },
   template: '<App/>'
 })

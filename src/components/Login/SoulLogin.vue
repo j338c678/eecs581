@@ -53,6 +53,9 @@
                     console.log(response.data)
                     if(response.data.password==this.user.password){
                         console.log("login")
+												this.$router.push({
+													path: '/soulStar'
+												})
                     }
                     else{
                         console.log("wrong password")
@@ -60,7 +63,7 @@
                 }).catch(function(err){
                     console.log(err)
                 });
-                
+
             },
 			SignIn() {
 				Vue.$vux.loading.show({
