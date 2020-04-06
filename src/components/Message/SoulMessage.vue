@@ -1,5 +1,8 @@
 <template>
     <div>
+    <br>
+    <x-header :left-options="{backText: ''}">name</x-header>
+    <br>
       <section class="chatlist" :class="showSelBox>0?'chatlist-bottom-collapse':'chatlist-bottom'">
             <mt-loadmore :top-method="loadTop" top-pull-text="加载更多" top-drop-text="释放加载" @top-status-change="handleTopChange" ref="loadmore">
                 <ul>
@@ -45,30 +48,25 @@
 </template>
 
 <script>
+import { XHeader} from 'vux'
 import util from './components/util'
 import { Toast } from 'mint-ui';
 export default {
     name: 'chatlist',
     data() {
         return {
-            showSelBox: 0, // 0隐藏 1显示表情 2显示其他
+            user: {
+              name: '',
+              icon:''
+            },
+            showSelBox: 0,
             selFace: '表情',
             selOther: '其他功能',
             content:'',
             topStatus: '',
-            //聊天记录
-            records: [{
-                type: 1,
-                time: util.formatDate.format(new Date(),'yyyy-MM-dd hh:mm:ss'),
-                name: 'user',
-                content: 'hello！'
-            }, {
-                type: 2,
-                time: util.formatDate.format(new Date(),'yyyy-MM-dd hh:mm:ss'),
-                name: 'service',
-                content: 'hi'
-            }],
-            // 表情
+            //record
+            records: [],
+            // emoji
             EXPS: [
                 { file: '100.gif', code: '/::)', title: '微笑',reg:/\/::\)/g },
                 { file: '101.gif', code: '/::~', title: '伤心',reg:/\/::~/g },
@@ -99,6 +97,9 @@ export default {
                 { file: '126.gif', code: '/::!', title: '吓',reg:/\/::!/g },
             ]
         }
+    },
+    components: {
+      XHeader
     },
     methods: {
         getEXP: function (pageNow,pageSize) {
