@@ -1,19 +1,19 @@
 <template>
     <div>
     <br>
-    <x-header :left-options="{backText: ''}">name</x-header>
+    <x-header :left-options="{backText: ''}">yizhou</x-header>
     <br>
       <section class="chatlist" :class="showSelBox>0?'chatlist-bottom-collapse':'chatlist-bottom'">
             <mt-loadmore :top-method="loadTop" top-pull-text="加载更多" top-drop-text="释放加载" @top-status-change="handleTopChange" ref="loadmore">
                 <ul>
                     <template v-for="item in records">
                         <li class="chat-mine" v-if="item.type==1">
-                            <!-- <div class="chat-user"><img src="../assets/user.png"></div> -->
+                            <div class="chat-user"><img src="@/assets/images/headicon/0.png"></div>
                             <div class="time"><cite><i>{{item.time}}</i>{{item.name}}</cite></div>
                             <div class="chat-text" v-html="replaceFace(item.content)"></div>
                         </li>
                         <li v-if="item.type==2">
-                            <!-- <div class="chat-user"><img src="../assets/default.png"></div> -->
+                            <div class="chat-user"><img src="@/assets/images/headicon/0.png"></div>
                             <div class="time"><cite>{{item.name}}<i>{{item.time}}</i></cite></div>
                             <div class="chat-text" v-html="replaceFace(item.content)"></div>
                         </li>
@@ -115,17 +115,17 @@ export default {
             this.records.push({
                 type: 1,
                 time: util.formatDate.format(new Date(),'yyyy-MM-dd hh:mm:ss'),
-                name: 'user',
+                name: 'cao',
                 content: this.content
             });
             setTimeout(function(){
                 _this.records.push({
                     type: 2,
                     time: util.formatDate.format(new Date(),'yyyy-MM-dd hh:mm:ss'),
-                    name: 'service',
+                    name: 'yizhou',
                     content: 'hi！'
                 });
-            },100);
+            },10000);
             this.content='';
             this.scrollToBottom();
             //this.focusTxtContent();//聚焦输入框

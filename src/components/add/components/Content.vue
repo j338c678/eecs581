@@ -29,12 +29,18 @@
 <script>
 import {
   XButton,
+  Loading,
+  TransferDomDirective as TransferDom,
   Box
 } from 'vux'
 import Vue from 'vue'
 export default {
+  directives: {
+    TransferDom
+  },
   name: 'SoulAddContent',
   components: {
+    Loading,
     XButton,
     Box
   },
@@ -47,7 +53,24 @@ export default {
       dialogVisible: false
     }
   },
+  mounted () {
+    this.timer = setInterval(() => {
+      console.log(this.$vux.loading.isVisible())
+    }, 1000)
+  },
+  beforeDestroy () {
+    clearInterval(this.timer)
+  },
   methods: {
+    submit(){
+      this.$vux.loading.show({
+        text: 'Loading'
+      })
+      setTimeout(() => {
+        this.$vux.loading.hide()
+      }, 2000)
+      this.$router.push({path:'/soulsquare'})
+    },
     handleRemove(file, fileList) {
         console.log(file, fileList);
       },

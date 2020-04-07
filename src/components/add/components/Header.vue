@@ -1,11 +1,11 @@
 <template>
   <div>
     <soul-base-header>
-      <template slot="left">
-        <div @click="handleClickCancel"><span>Cancel</span></div>
+      <span slot="left" style="color: #26D4D0;">music</span>
+      <template slot="center">
+        <div @click="handleClickCancel"><span>Pull</span></div>
       </template>
-      <template slot="center">Recording</template>
-      <span slot="right" style="color: #26D4D0;">LT</span>
+      <span slot="right" style="color: #26D4D0;">camera</span>
     </soul-base-header>
   </div>
 </template>
