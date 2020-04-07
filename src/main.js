@@ -17,7 +17,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import preview from 'vue-photo-preview'
 import 'swiper/dist/css/swiper.css'
 import 'vue-photo-preview/dist/skin.css'
-
+import global from './components/common/Global.vue'
 //9/21/2019
 import {LoadingPlugin} from 'vux'
 Vue.use(LoadingPlugin)
@@ -35,7 +35,7 @@ Vue.use(VueAwesomeSwiper)
 Vue.use(preview)
 Vue.use(MintUI)
 Vue.use(ElementUI);
-
+Vue.prototype.GLOBAL=global
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

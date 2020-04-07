@@ -55,7 +55,7 @@ export default {
   },
   mounted () {
     this.timer = setInterval(() => {
-      console.log(this.$vux.loading.isVisible())
+      // console.log(this.$vux.loading.isVisible())
     }, 1000)
   },
   beforeDestroy () {

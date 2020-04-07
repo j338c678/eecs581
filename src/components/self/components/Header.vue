@@ -4,10 +4,10 @@
     <div class="soul-self-header-more">More</div>
     <div class="soul-self-header-detail" :style="detailStyleObject">
       <div class="soul-self-header-headicon">
-        <img src="@/assets/images/headicon/0.png">
+        <img src="@/assets/images/headicon/1.png">
       </div>
-      <div class="soul-self-header-nickName">Superman</div>
-      <div class="soul-self-header-register-date">418days,11moments</div>
+      <div class="soul-self-header-nickName" id="name">{{username}}</div>
+      <div class="soul-self-header-register-date">{{daycount}}</div>
       <div class="soul-self-header-tags">Travel，LOL，Piano，Ski，Computer science</div>
     </div>
     <div :style="titleStyleObject">Moment</div>
@@ -18,8 +18,11 @@
 import { mapState } from 'vuex'
 export default {
   name: 'SoulSelfHeader',
+
   data () {
     return {
+      username:this.GLOBAL.UserToken.data.username,
+      daycount:this.GLOBAL.getDatesCreated(),
       backgroundImg: './static/photo1.jpg',
       titleOpacity: 0, // "self transparency "
       titleY: 320, // y distance of "self"
@@ -87,18 +90,19 @@ export default {
 .soul-self-header-headicon {
   position: absolute;
   top: 80px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
   background-color: #fff;
 }
 .soul-self-header-headicon img {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
 }
 .soul-self-header-nickName {
   position: absolute;
-  top: 160px;
+  top: 170px;
+  font-size: 0.5rem;
   color: #fff;
 }
 .soul-self-header-register-date {

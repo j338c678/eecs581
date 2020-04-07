@@ -48,22 +48,22 @@
                 url: 'http://localhost:8080/api/tutorials/users/'.concat(this.user.name),
                 header:{"Content-Type":"application/json"},
                 }).then(response=>{
-                    // let userdata = response
-                    console.log('http://localhost:8080/api/tutorials/users/'.concat(this.user.name))
-                    console.log(response.data)
+                    let userdata = response
                     if(response.data.password==this.user.password){
-                        console.log("login")
-												this.$router.push({
-													path: '/soulStar'
-												})
+						console.log("login")
+						console.log(userdata.data)
+						this.GLOBAL.setUserToken(userdata)
+                        this.$router.push({
+							path: '/soulStar',
+                        })
                     }
                     else{
                         console.log("wrong password")
                     }
                 }).catch(function(err){
                     console.log(err)
-                });
-
+				});
+				
             },
 			SignIn() {
 				Vue.$vux.loading.show({

@@ -1,5 +1,5 @@
 <template>
-  <div class="header":style="backgroundDiv">
+  <div class="header" :style="backgroundDiv">
     <!-- <audio class="bgm" autoplay="autoplay" preload="auto">
          <source src="/static/audios/soul.mp3"></source>
     </audio> -->
