@@ -1,0 +1,45 @@
+<template>
+  <div id="app">
+
+    <!-- 欢迎页面 -->
+    <soul-welcome></soul-welcome>
+
+    <!-- <soul-Login></soul-Login> -->
+    <!-- 显示内容 -->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
+
+    <!-- 弹出Add -->
+    <soul-add></soul-add>
+  </div>
+</template>
+
+<script>
+import SoulWelcome from './components/common/SoulWelcome'
+import SoulNav from './components/common/SoulNav'
+import SoulAdd from './components/add/SoulAdd'
+//
+import SoulLogin from './components/Login/SoulLogin'
+//
+export default {
+  name: 'App',
+  components: {
+    SoulLogin,
+    SoulWelcome,
+    SoulNav,
+    SoulAdd
+  }
+}
+</script>
+
+<style>
+  /*引入基础样式*/
+  @import "./assets/css/reset.css";
+
+  /*引入animate.css*/
+  @import "./assets/css/lib/animate.css";
+
+  /*引入CSS变量*/
+  @import "./assets/css/variables.css";
+</style>

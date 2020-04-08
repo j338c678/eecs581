@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  mysql:
+    image: mysql:5
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: letsTalk!
+      MYSQL_DATABASE: letsTalk
+    volumes:
+      - ./dbs/mysql:/var/lib/mysql
+ 
