@@ -1,10 +1,11 @@
 <template>
 	<div>
+		<div style="text-align: center;margin-bottom: 30px;padding-top: 10px;">
+			<img class="logo" src="@/assets/images/headicon/0.png">
+		</div>
 		<group title="Login">
-			<x-input title="User_id:" v-model="user.name"></x-input>
+			<x-input title="ID:" v-model="user.name"></x-input>
 			<x-input title="Password:" type="password" v-model="user.password" @blur.prevent="inputLoseFocus"></x-input>
-      <x-input title="Gender:" type="Gender" v-model="user.password" @blur.prevent="inputLoseFocus"></x-input>
-      <x-input title="Password Confirmed:" type="password" v-model="user.password" @blur.prevent="inputLoseFocus"></x-input>
 		</group>
 		<box gap="30px 10px">
 			<x-button type="primary" @click.native="mounted">Login</x-button>
@@ -45,17 +46,17 @@
 			mounted(){
 							this.$ajax({
 			      method: 'post',
-			      url: 'http://localhost:8080/api/tutorials/user',
+			      url: 'http://18.220.218.48:8080/api/tutorials/user',
 						data:{
-							username: this.user.name,
- 	    				password: this.user.password,
+							username: "root",
+	    				password: this.user.password,
 	    				fname: "rootFN",
 	    				lname: "rootLN",
 	    				gender: "Male"
       			},
 						header:{"Content-Type":"application/json"},
 			    }).then(response=>{
-				    console.log(response)
+				    console.log(response);
 			    }).catch(function(err){
         console.log(err)
     		});
@@ -65,7 +66,7 @@
 					text: 'loging'
 				})
 				setTimeout(() => {
-					if (this.user.password === 'admin'&& this.user.name === 'admin' ) {
+					if (this.user.password === 'admin') {
 						// Vue.ls.set('token', this.user.name, 60 * 60 * 1000)
 						this.$router.push({
 							path: this.$route.query.redirect ? this.$route.query.redirect : '/soulStar'

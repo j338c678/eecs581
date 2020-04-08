@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  nodeAPI:
+    build:
+      context: NodeAPI/node-mysql/
+      dockerfile: Dockerfile
+    image: letstalkapi
+    ports:
+      - 8080:8080
+

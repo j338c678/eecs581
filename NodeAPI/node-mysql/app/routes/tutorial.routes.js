@@ -6,11 +6,11 @@ module.exports = app => {
 
   //User Table API Endpoints
   //Create a new User
-  router.post("/users", users.createUser);
-  router.get("/users/:username", users.findUser);
-  router.get("/users", users.findAllUsers);
-  router.put("/users/:username", users.updateUser);
-  router.delete("/users/:username", users.deleteUser);
+  router.post("/user", users.createUser);
+  router.get("/user/:username", users.findUser);
+  router.get("/user", users.findAllUsers);
+  router.put("/user/:username", users.updateUser);
+  router.delete("/user/:username", users.deleteUser);
 
   //Tutorial Stuff
   // Create a new

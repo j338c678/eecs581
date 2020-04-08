@@ -3,9 +3,6 @@ services:
   mysql:
     image: mysql:5
     restart: always
-    networks:
-      app_net:
-        ipv4_address: 172.18.0.2
     ports:
       - 3306:3306
     environment:
@@ -13,36 +10,4 @@ services:
       MYSQL_DATABASE: letsTalk
     volumes:
       - ./dbs/mysql:/var/lib/mysql
-  nodeAPI:
-    build:
-      context: NodeAPI/node-mysql/
-      dockerfile: Dockerfile
-    image: letstalkapi
-    networks:
-      app_net:
-        ipv4_address: 172.18.0.3
-    ports:
-      - 8080:8080
-    depends_on:
-      - mysql
-  letsTalk:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: letstalk
-    networks:
-      app_net:
-        ipv4_address: 172.18.0.4
-    ports:
-      - 1874:1874
-    depends_on:
-    - mysql
-    - nodeAPI
 
-#172.18.0.1 Reserved for the Gateway
-networks:
-    app_net:
-        ipam:
-            driver: default
-            config:
-                - subnet: 172.18.0.0/16
