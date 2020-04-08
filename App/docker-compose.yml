@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  letsTalk:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: letstalk
+    ports:
+      - 1874:1874
+

@@ -1,0 +1,25 @@
+:root {
+  /*z-index层级*/
+  --content: 0; /*内容层*/
+  --nav: 1; /*底部导航层*/
+  --header: 2; /*头部层，因为有的页面只有头部，没有底部导航栏，所以将nav和header层做出区分*/
+  --popout: 3; /*弹出层*/
+  --mask: 4; /*遮罩层*/
+
+  /*颜色*/
+  --background-color: #fff; /* 白色。背景颜色 */
+  --background-color-search: #F6F6F6; /* 一种灰色。搜索框背景的颜色 */
+  --background-color-cell-divide: #F6F6F6; /* 一种灰色。搜索框背景的颜色 */
+  --box-shadow-color: #D6D6D6; /* 浅浅的灰色。header和nav的阴影颜色 */
+  --font-color-disabled: #A6A6A6; /* 淡灰色。不可选中的文字，如底部导航栏、广场顶部header、预览聊天记录、时间戳等 */
+  --font-color-enabled: #000; /* 黑色。可选中的文字，如瞬间、聊天顶部header */
+  --font-color-square-nickname: #26D4D0; /* 青色。广场瞬间的昵称 */
+
+  /*字体大小、距离、行高*/
+  --box-shadow-blur: 0.35rem; /* header和nav模糊距离 */
+  --font-size-header-center: 0.32rem; /* header栏中部字体大小，左右两侧为默认的0.28rem */
+  --font-size-square-nickname: 0.28rem; /* 广场瞬间的昵称 */
+  --font-size-square-timestamp: 0.26rem; /* 广场瞬间的时间戳 */
+  --font-size-square-word: 0.3rem; /* 广场瞬间的文字大小 */
+  --font-line-height-square-content: 0.6rem; /* 广场瞬间的文字行高 */
+}
