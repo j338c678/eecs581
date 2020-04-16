@@ -132,7 +132,7 @@
 			    url: 'http://localhost:8080/api/tutorials/users',
 				data:{
 					username: this.user.name,
- 	    			password: this.user.password,
+ 	    			password: md5(this.user.password),
 	    			fname: this.user.fname,
 	    			lname: this.user.lname,
 	    			gender:this.user.gender},
@@ -143,11 +143,6 @@
         			console.log(err)
 				});
 				this.$router.push({path:'/'})
-			},
-			getHashFromPassword(){
-				hashedPassword = this.user.password.toUpperCase();
-				hashedPassword = md5(password);
-				return hashedPassword;
 			}
 		},
 	}
