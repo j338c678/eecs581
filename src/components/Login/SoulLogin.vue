@@ -49,7 +49,7 @@
                 header:{"Content-Type":"application/json"},
                 }).then(response=>{
                     let userdata = response
-                    if(response.data.password==this.user.password){
+                    if(response.data.password==md5(this.user.password)){
 						console.log("login")
 						console.log(userdata.data)
 						this.GLOBAL.setUserToken(userdata)
@@ -80,11 +80,6 @@
 				setTimeout(() => {
 					window.scrollTo(0, 0);
 				}, 100);
-			},
-			getHashFromPassword(){
-				hashedPassword = this.user.password.toUpperCase();
-				hashedPassword = md5(password);
-				return hashedPassword;
 			}
 		},
 	}
