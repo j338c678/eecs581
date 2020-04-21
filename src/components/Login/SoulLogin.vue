@@ -11,7 +11,7 @@
 			<x-button type="primary" @click.native="login">Login</x-button>
 		</box>
 		<box gap="30px 10px">
-			<x-button type="primary" @click.native="SignIn">Signin</x-button>
+			<x-button type="primary" @click.native="SignIn">SignUp</x-button>
 		</box>
 	</div>
 </template>
@@ -24,6 +24,7 @@
 		Box
 	} from 'vux'
 	import Vue from 'vue'
+	import { CometChat } from "@cometchat-pro/chat";
 	import md5 from 'js-md5'
 	export default {
     name: 'SoulLogin',
@@ -52,6 +53,8 @@
                     if(response.data.password==md5(this.user.password)){
 						console.log("login")
 						console.log(userdata.data)
+
+
 						this.GLOBAL.setUserToken(userdata)
                         this.$router.push({
 							path: '/soulStar',
@@ -63,7 +66,20 @@
                 }).catch(function(err){
                     console.log(err)
 				});
-				
+				var appID = "167877e1af82bd3";
+	      var appRegion = "us";
+		CometChat.init(appID, new CometChat.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(appRegion).build());
+		const apiKey = "7fe14529324150ffd4a99c28ea754edf36f63d37";
+		this.showSpinner = true;
+		CometChat.login(this.user.name, apiKey).then(
+			() => {
+				this.showSpinner = false;
+			},
+			error => {
+				this.showSpinner = false;
+				console.log("Login failed with error:", error.code);
+			}
+		);
             },
 			SignIn() {
 				Vue.$vux.loading.show({

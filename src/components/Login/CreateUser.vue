@@ -37,9 +37,9 @@
 			<datetime
 			v-model="date"
 			cancel-text='Cancel'
-			confirm-text="OK" 
+			confirm-text="OK"
 			@on-confirm="setBirthday(date)">
-			</datetime> 
+			</datetime>
     	</group>
 		<group title="Age Preference">
 			<selector v-model="MinAge" ref="defaultValueRef" @on-change="setAgePref('min',MinAge)" title="Min" direction="rtl" :options="list" ></selector>
@@ -90,6 +90,7 @@
 		CheckerItem
 	} from 'vux'
 	import Vue from 'vue'
+	import { CometChat } from "@cometchat-pro/chat";
 	import md5 from 'js-md5'
 	export default {
     name: 'CreateUser',
@@ -118,7 +119,7 @@
 					birthday:'',
 					gprefer:'',
 					minage:'',
-					maxage:'' 
+					maxage:''
 				},
 				MinAge:'',
 				MaxAge:'',
@@ -128,6 +129,10 @@
 			}
 		},
 		methods: {
+			createUser()
+			{
+
+			},
 			createArray(target){
 				for( var i=18;i <61;i++){
 					target.push(i)
@@ -172,7 +177,29 @@
 			    }).catch(function(err){
         			console.log(err)
 				});
-				this.$router.push({path:'/'})
+				let apiKey = "7fe14529324150ffd4a99c28ea754edf36f63d37";
+				console.log(apiKey);
+          var uid = this.user.name;
+          var name = this.user.name;
+
+          var user = new CometChat.User(uid);
+					console.log(user);
+
+          user.setName(name);
+
+          CometChat.createUser(user, apiKey).then(
+              user => {
+                  console.log("user created", user);
+              },error => {
+                  console.log("error", error);
+              }
+          )
+					this.$router.push({path:'/'})
+			},
+			getHashFromPassword(){
+				hashedPassword = this.user.password.toUpperCase();
+				hashedPassword = md5(password);
+				return hashedPassword;
 			}
 		},
 	}

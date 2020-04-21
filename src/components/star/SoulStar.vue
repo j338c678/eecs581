@@ -1,36 +1,16 @@
 <template>
   <div class="header" :style="backgroundDiv">
-    <!-- <audio class="bgm" autoplay="autoplay" preload="auto">
-         <source src="/static/audios/soul.mp3"></source>
-    </audio> -->
-    <!-- <div class="background" :style="background"> -->
-    <!-- </div> -->
-     <!-- <embed type="video/mp3" src="static/audios/soul.mp3" autoplay="autoplay" loop="true" hidden="false"></embed> -->
-    <!-- <img src="@/assets/images/background/main_background.jpg" style="width: 8rem; height: 15.5rem;"> -->
-
-
-
-
     <div class="middle" :style="backgroundDiv">
-
+      <router-link to='/soulHome'>
       <grid :show-lr-borders="false" :show-vertical-dividers="false">
-        <grid-item ><div class="button1">voice chat</div></grid-item>
-        <grid-item ><div class="button2">video chat</div></grid-item>
-        <grid-item ><div class="button3">Let'sTalk</div></grid-item>
+        <!-- <grid-item ><div class="button1">voice chat</div></grid-item> -->
+
+        <grid-item ><div class="button2">Let'sTalk</div></grid-item>
+
+        <!-- <grid-item ><div class="button3">Let'sTalk</div></grid-item> -->
       </grid>
+      </router-link>
     </div>
-
-
-
-
-
-    <!-- <div class="img1"></div> -->
-      <!-- <flexbox>
-      <flexbox-item><div class="flex-demo">1</div></flexbox-item>
-      <flexbox-item><div class="flex-demo">2</div></flexbox-item>
-    </flexbox> -->
-      <!-- <button style:"width: 12px;">fasd</button> -->
-  <!-- </img> -->
   <soul-Nav></soul-Nav>
   </div>
 </template>

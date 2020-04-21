@@ -1,16 +1,12 @@
 <template>
   <div id="app">
 
-    <!-- 欢迎页面 -->
     <soul-welcome></soul-welcome>
 
-    <!-- <soul-Login></soul-Login> -->
-    <!-- 显示内容 -->
     <keep-alive>
       <router-view/>
     </keep-alive>
 
-    <!-- 弹出Add -->
     <soul-add></soul-add>
   </div>
 </template>
@@ -22,6 +18,10 @@ import SoulAdd from './components/add/SoulAdd'
 //
 import SoulLogin from './components/Login/SoulLogin'
 //
+
+import { CometChat } from "@cometchat-pro/chat";
+import "./App.css";
+//
 export default {
   name: 'App',
   components: {
@@ -29,17 +29,25 @@ export default {
     SoulWelcome,
     SoulNav,
     SoulAdd
+  },
+  created() {
+    this.initializeApp();
+  },
+  methods: {
+    initializeApp() {
+      var appID = "167877e1af82bd3";
+      var appRegion = "us";
+      CometChat.init(appID, new CometChat.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(appRegion).build());
+    }
   }
 }
 </script>
 
 <style>
-  /*引入基础样式*/
+
   @import "./assets/css/reset.css";
 
-  /*引入animate.css*/
   @import "./assets/css/lib/animate.css";
 
-  /*引入CSS变量*/
   @import "./assets/css/variables.css";
 </style>
