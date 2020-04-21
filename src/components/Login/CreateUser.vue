@@ -1,6 +1,6 @@
 <template>
 	<div>
-    	<x-header>Welcome</x-header>
+    	<x-header :left-options="{backText:'Back'}">Welcome</x-header>
    		<br>
 		<group title="Account">
 			<x-input v-model="user.name"></x-input>
@@ -19,7 +19,7 @@
 		</group>
 		<group title="Gender">
 			<br>
-			    <button-tab>
+			<button-tab>
 				<button-tab-item @on-item-click="setGender('male')">{{'Male'}}</button-tab-item>
 				<button-tab-item @on-item-click="setGender('female')">{{'Female'}}</button-tab-item>
 			</button-tab>
@@ -45,6 +45,29 @@
 			<selector v-model="MinAge" ref="defaultValueRef" @on-change="setAgePref('min',MinAge)" title="Min" direction="rtl" :options="list" ></selector>
 			<selector v-model="MaxAge" ref="defaultValueRef" @on-change="setAgePref('max',MaxAge)" title="Max" direction="rtl" :options="list"></selector>
 		</group>
+		<group title="Your Tags">
+			<divider>Games</divider>
+			<checker v-model="demo1Checkbox" type="checkbox" default-item-class="demo1-item" selected-item-class="demo1-item-selected">
+			<checker-item value="1">World of Warcraft</checker-item>
+			<checker-item value="2">League of Legend</checker-item>
+			<checker-item value="3">Dota</checker-item>
+			<checker-item value="4">CSGO</checker-item>
+			</checker>
+			<divider>Music</divider>
+			<checker v-model="demo1Checkbox" type="checkbox" default-item-class="demo1-item" selected-item-class="demo1-item-selected">
+			<checker-item value="2">R&B</checker-item>
+			<checker-item value="3">Blues</checker-item>
+			<checker-item value="4">Classic</checker-item>
+			<checker-item value="5">Electronic</checker-item>
+			</checker>
+			<divider>Sports</divider>
+			<checker v-model="demo1Checkbox" type="checkbox" default-item-class="demo1-item" selected-item-class="demo1-item-selected">
+			<checker-item value="2">Jogging</checker-item>
+			<checker-item value="3">Basketball</checker-item>
+			<checker-item value="4">Football</checker-item>
+			<checker-item value="5">Swim</checker-item>
+			</checker>
+		</group>
 		<box gap="30px 10px">
 			<x-button type="primary" @click.native="submit">Submit</x-button>
 		</box>
@@ -61,7 +84,10 @@
 		Selector,
 		ButtonTab,
 		ButtonTabItem,
-		XHeader
+		XHeader,
+		Divider,
+		Checker,
+		CheckerItem
 	} from 'vux'
 	import Vue from 'vue'
 	import md5 from 'js-md5'
@@ -76,7 +102,10 @@
 			Selector,
 			ButtonTab,
 			ButtonTabItem,
-			XHeader
+			XHeader,
+			Divider,
+			Checker,
+			CheckerItem
 		},
 		data() {
 			return {
@@ -94,6 +123,7 @@
 				MinAge:'',
 				MaxAge:'',
 				date:"2020-01-01",
+				demo1Checkbox: [2, 1],
 				list:Array(100).fill().map((e,i)=>i+1).filter(function(x) {return (x>=18&&x<=60)})
 			}
 		},
@@ -152,5 +182,12 @@
 	.logo {
 		width: 100px;
 		height: 100px
+	}
+	.demo1-item {
+	border: 1px solid #ececec;
+	padding: 5px 15px;
+	}
+	.demo1-item-selected {
+	border: 1px solid green;
 	}
 </style>
