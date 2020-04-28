@@ -9,6 +9,8 @@ import CreateUser from '@/components/Login/CreateUser'
 import SoulMessage from '@/components/Message/SoulMessage'
 import SoulHome from '@/components/Home/SoulHome'
 
+import Chat from '@/views/Chat.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -52,6 +54,11 @@ export default new Router({
       path: '/soulHome',
       name: 'SoulHome',
       component: SoulHome
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: Chat
     },
   ]
 })

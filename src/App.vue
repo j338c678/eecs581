@@ -34,10 +34,27 @@ export default {
     this.initializeApp();
   },
   methods: {
+    // initializeApp() {
+    //   var appID = "167877e1af82bd3";
+    //   var appRegion = "us";
+    //   CometChat.init(appID, new CometChat.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(appRegion).build());
+    // }
     initializeApp() {
-      var appID = "167877e1af82bd3";
-      var appRegion = "us";
-      CometChat.init(appID, new CometChat.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(appRegion).build());
+      var appId = "167877e1af82bd3";
+      let cometChatSettings = new CometChat.AppSettingsBuilder()
+        .subscribePresenceForAllUsers()
+        .setRegion("us")
+        .build();
+      CometChat.init(appId, cometChatSettings).then(
+        () => {
+          console.log("Initialization completed successfully");
+    //You can now call login function.
+        },
+        error => {
+          console.log("Initialization failed with error:", error);
+    //Check the reason for error and take apppropriate action.
+        }
+      );
     }
   }
 }

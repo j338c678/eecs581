@@ -74,12 +74,49 @@
 		CometChat.login(this.user.name, apiKey).then(
 			() => {
 				this.showSpinner = false;
+				this.$router.push({
+	            name: "SoulStar"
+	          });
 			},
 			error => {
 				this.showSpinner = false;
 				console.log("Login failed with error:", error.code);
 			}
 		);
+			//
+			// var apiKey = "7fe14529324150ffd4a99c28ea754edf36f63d37";
+      // this.showSpinner = true;
+      // CometChat.login(this.username, apiKey).then(
+      //   () => {
+      //     this.showSpinner = false;
+      //     this.$router.push({
+      //       name: "chat"
+      //     });
+      //   },
+      //   error => {
+      //     this.showSpinner = false;
+      //     alert(
+      //       "Whops. Something went wrong. This commonly happens when you enter a username that doesn't exist. Check the console for more information"
+      //     );
+      //     console.log("Login failed with error:", error.code);
+      //   }
+      // );
+
+			//
+			// var GUID = "supergroup";
+      // var password = "";
+      // var groupType = CometChat.GROUP_TYPE.PUBLIC;
+			//
+      // CometChat.joinGroup(GUID, groupType, password).then(
+      //   group => {
+      //     console.log("Group joined successfully:", group);
+      //   },
+      //   error => {
+      //     console.log("Group joining failed with exception:", error);
+      //   }
+      // );
+
+
             },
 			SignIn() {
 				Vue.$vux.loading.show({

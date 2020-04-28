@@ -7,7 +7,7 @@
       @touchmove="handleTouchMove"
       @touchend="handleTouchEnd"
     >
-    <router-link to='/soulmessage'>
+    <router-link to='/chat'>
       <div class="message-item-info-headicon">
         <img src="@/assets/images/headicon/0.png">
         <div><span>Star</span></div>
