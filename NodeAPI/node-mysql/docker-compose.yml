@@ -2,7 +2,7 @@ version: "3.3"
 services:
   nodeAPI:
     build:
-      context: NodeAPI/node-mysql/
+      context: .
       dockerfile: Dockerfile
     image: letstalkapi
     ports:
