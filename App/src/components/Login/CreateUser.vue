@@ -164,11 +164,7 @@
 			submit(){
 				this.$ajax({
 			    method: 'post',
-<<<<<<< HEAD
-			    url: 'http://18.220.218.48:8080/api/tutorials/users',
-=======
 			    url: 'http://localhost:8080/api/tutorials/users',
->>>>>>> master
 				data:{
 					username: this.user.name,
  	    			password: md5(this.user.password),

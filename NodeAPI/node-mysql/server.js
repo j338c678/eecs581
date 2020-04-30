@@ -15,7 +15,7 @@ app.use(function (req, res, next) {
    next(err);*/
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'http://18.216.236.104:1874');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:1874');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
