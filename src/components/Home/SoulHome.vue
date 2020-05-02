@@ -5,12 +5,10 @@
     <br>
     <div class="form-group">
       <div class="form-group">
-        Enter the receiver Id to start a chat </p>
-        <p v-if="error">
-          <b class="text-danger"> Receiver ID is required </b>
+
         </p>
-        <group title="UID">
-        <x-input type="text" class="form-control" v-model="receiver_id"></x-input>
+        <group title="Welcome to Let'sTalk">
+        <!-- <x-input type="text" class="form-control" v-model="receiver_id"></x-input> -->
         </group>
       </div>
 
@@ -22,7 +20,7 @@
         <button class="btn btn-secondary"> Ongoing Call ... </button>
       </div>
       <div v-else>
-        <button  @click="startVoiceChat" class="btn btn-secondary"> Start Call <span v-if="showSpinner" class="fa fa-spin fa-spinner"></span> </button>
+        <button  @click="startVoiceChat" class="btn btn-secondary"> Match <span v-if="showSpinner" class="fa fa-spin fa-spinner"></span> </button>
       </div>
     </div>
     <div id="callScreen"></div>

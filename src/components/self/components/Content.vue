@@ -22,12 +22,11 @@ export default {
       styleObject: {
         overflow: 'hidden',
         height: (window.innerHeight - 100) + 'px'
-        /* 减去头部和底部的高度，这里的头部不是fixed定位的，跟广场和聊天的不一样 */
       },
       cellItemOption1: {
         icon: 0,
-        nickName: '#来自艺术家星球',
-        timeStamp: '2018-11-16 19:10:26 晴天',
+        nickName: '',
+        timeStamp: '2018-11-16 19:10:26',
         imgs: {
           url: [],
           count: 0
@@ -46,12 +45,12 @@ export default {
         timeStamp: '2018-10-16 00:19:29',
         imgs: {
           url: [
-            './static/photo1.jpg',
-            './static/photo1.jpg'
+            './static/photo3.jpg',
+            './static/photo3.jpg'
           ],
           count: 2
         },
-        word: 'Go LA',
+        word: 'HelloWorld',
         topic: ' ',
         location: ' ',
         iconHeartCount: 5,
