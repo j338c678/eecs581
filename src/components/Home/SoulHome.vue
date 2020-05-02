@@ -134,9 +134,9 @@ export default {
     },
 
     startVoiceChat() {
-       if (!this.receiver_id) this.error = true;
-       this.showSpinner = true;
-       var receiverID = this.receiver_id;
+       // if (!this.receiver_id) this.error = true;
+       // this.showSpinner = true;
+       var receiverID = 'superhero1';
        var callType = CometChat.CALL_TYPE.AUDIO;
        var receiverType = CometChat.RECEIVER_TYPE.USER;
        var call = new CometChat.Call(receiverID, callType, receiverType);
